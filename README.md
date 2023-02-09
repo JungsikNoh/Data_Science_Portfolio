@@ -16,8 +16,8 @@ It will be updated on a regular basis.
     Its implementation first starts with BFS to find minimum spanning trees in a graph. 
     Then we can compute the edge betweenness which is the number of the shortest paths going through 
     a given edge, as a measure of centrality of an edge in a graph.
-    By successively removing the edges with the highest betweennesses, the algorithm detects communities
-    as disconnected components.
+    By successively removing the edges with the highest betweenness, the algorithm detects communities
+    which are disconnected components.
    
 - Implementation of Reservoir Sampling Algorithm in **Java**
   - To analyze rapidly arriving data streams where we cannot store all the data points, 
