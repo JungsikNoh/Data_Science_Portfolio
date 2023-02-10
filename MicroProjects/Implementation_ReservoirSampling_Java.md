@@ -1,7 +1,7 @@
 # Implementation of Reservoir Sampling Algorithm in Java
 ### *Jungsik Noh*
 
-To analyze rapidly arriving data streams where we cannot store all the data points, effective sampling strategies become critical. Among those, Reservoir Sampling allows us to keep a sample with a fixed size, say $k$, at any given time, even though the algorithm does not look back at previous data points. The produced sample satifies a nice property that it is always a simple random sample from all the data points at any given time ($\{x_1, x_2, \ldots, x_t  \}$ 
+To analyze rapidly arriving data streams where we cannot store all the data points, effective sampling strategies become critical. Among those, Reservoir Sampling allows us to keep a sample with a fixed size, say $k$, at any given time, even though the algorithm does not look back at previous data points. The produced sample satifies a nice property that it is always a simple random sample from all the data points at any given time ( $x_1, x_2, \ldots, x_t$ 
  for any $t$).
 
 The following *Java* code implement *Resorvoir Sampling* of 10 data points from a stream of 1,000 data points, $(1, 2, \ldots, 1000)$. The sampling output is shown when the sample changes. 
