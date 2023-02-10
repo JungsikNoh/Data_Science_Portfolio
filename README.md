@@ -27,7 +27,7 @@ It will be updated on a regular basis.
     The produced sample satifies a nice property that it is always a simple random sample 
     from all the data points at any given time ( $\\{ x_1, x_2, \ldots, x_t \\}$ for any $t$ ).
   
-- Implementation of Hierarchical Clustering (HCL) Algorithm in **R**
+- [Implementation of Hierarchical Clustering (HCL) Algorithm in **R**](https://rpubs.com/JungsikNoh/ImplementHCLinR)
   - HCL is one of the most useful clustering algorithms. 
     It can also provide an order of data points based on their pairwise distances, 
     which is often useful for various data visualizations. 
