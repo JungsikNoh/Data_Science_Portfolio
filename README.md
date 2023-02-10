@@ -19,7 +19,7 @@ It will be updated on a regular basis.
     By successively removing the edges with the highest betweenness, the algorithm detects communities
     which are disconnected components.
    
-- Implementation of Reservoir Sampling Algorithm in **Java**
+- [Implementation of Reservoir Sampling Algorithm in **Java**](MicroProjects/Implementation_ReservoirSampling_Java.md)
   - To analyze rapidly arriving data streams where we cannot store all the data points, 
     effective sampling strategies become critical.
     Among those, Reservoir Sampling allows us to keep a sample with a fixed size, say $k$, at any given time, 
