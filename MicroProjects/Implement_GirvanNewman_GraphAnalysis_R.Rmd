@@ -1,0 +1,380 @@
+---
+title: Implementation of Girvan-Newman Algorithm from scratch for Graph analysis in
+  R
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+##### *Jungsik Noh*
+
+Girvan-Newman Algorithm is for community detection in a network, that is, a graph. Its implementation first starts with Breadth First Search (BFS) to find minimum spanning trees in a graph. Then we can compute the edge betweenness which is the number of the shortest paths going through a given edge, as a measure of centrality of an edge in a graph. By successively removing the edges with the highest betweenness, the algorithm detects communities which are disconnected components.
+
+
+### Load packages
+To visualize an example graph, *igraph* package is utilized. 
+
+```{r message=FALSE, warning=FALSE}
+library(igraph)
+```
+
+
+### Girvan-Newman algorithm from scratch
+Implementation contains the following six functions.
+
+- *BFS_unweightedGraph(Gmat, src)*
+  - Find minimum spanning trees from a source node (src) for a given unweighted graph (Gmat)
+  
+- *BFS_unweightedGraph_getPaths(BFSout, src, dest)*
+  - Extract the shortest paths (src -> dest) from a BFS output
+
+- *getEdges(Gmat)*
+  - Get edges from a given adjacency matrix
+
+- *myEdgeBetweenness(Gadjmat)*
+  - Compute edge betweennesses for all the edges
+
+- *isConnected(Gadjmat)*
+  - Check if all nodes in a graph are connected or not
+  
+- *GirvanNewman1step(Gmat)*
+  - Find and remove an edge having the highest edge betweenness
+  
+
+```{r}
+BFS_unweightedGraph <- function(Gmat, src){ 
+  # Dijkstra type algorithm to find shortest paths from a source node for 
+  # unweighted graphs
+  # output: shDist, nPaths, prevVertexList (list) 
+  # internal control var: visited, queue
+  
+  # setup param
+  n = nrow(Gmat)                # total num of vertexes
+  visited = rep(FALSE, n)       # visited indicator to setup a queue (default=F)
+  queue = numeric()             # queue for BFS
+  shDist = rep(Inf, n)          # shortest distances from the src
+  nPaths = rep(0, n)            # num of shortest paths from the src
+  prevVertexList = vector("list", length = n)   # shortest paths will be stored
+  
+  # at the src vertex
+  shDist[src] = 0
+  nPaths[src] = 1
+  visited[src] = TRUE
+  queue = c(queue, src)
+  prevVertexList[[src]] = -1      # -1 means it is the src 
+                                  # a list due to possible multiplicity
+  
+  # BFS type algorithm
+  while(length(queue) != 0){
+    curr = queue[1]             # get a current vertex from queue
+    queue = queue[-1]           # remove curr from queue (FIFO)
+    
+    # For all connected vertexes
+    for (u in which(Gmat[curr, ] == 1)){ 
+      # If u is not visited, push it to the queue
+      if (!visited[u]){
+        visited[u] = TRUE
+        queue = c(queue, u)
+      } 
+      # print(queue)
+      
+      # Check if it is a better path
+      if (shDist[u] > shDist[curr] + 1){  
+        shDist[u] = shDist[curr] + 1
+        nPaths[u] = nPaths[curr]
+        prevVertexList[[u]] = curr
+      } else if (shDist[u] == shDist[curr] + 1){
+        # Check if additional shortest path is found
+        nPaths[u] = nPaths[curr] + 1
+        prevVertexList[[u]] = c(prevVertexList[[u]], curr)
+      }
+    }
+  }
+  
+  result = list(numVertexes=n, 
+                source=src,
+                shDist=shDist, 
+                nPaths=nPaths, 
+                prevVertexList=prevVertexList)
+  return(result)
+}
+```
+ 
+
+```{r}
+BFS_unweightedGraph_getPaths <- function(BFSout, src, dest){
+  # Extract the shortest paths (src -> dest) from a BFS output for a Graph and the src
+  n = BFSout$numVertexes
+  tmp = BFSout$source
+  if (tmp != src){
+    print("The source of BFSout is different from the input src. Check the sanity of input.")
+    return()
+  }
+  
+  prevVertexList = BFSout$prevVertexList
+  numPaths = BFSout$nPaths[dest]
+  listPaths = vector('list', numPaths)
+  listPathsInd = 1
+  
+  # Backtracking
+  # Initialize
+  q_branching = numeric()     # queue for vertexes with multiple prevVertexes (LIFO)
+  q_newBranch = numeric()     # additional prevVertexes at q_branching
+  q_pastPath = list()         # path up to the last q_branching
+  currPath = numeric()
+  
+  curr = dest                    # current vertex
+  tmp = prevVertexList[[curr]] 
+  tmp = tmp[length(tmp):1]
+  crawl = tmp[length(tmp)]
+  crawlRight = tmp[-length(tmp)]
+  q_branching = c( q_branching, rep(curr, length(crawlRight)) )
+  q_newBranch = c(q_newBranch, crawlRight)
+  currPath = c(currPath, curr)
+  if (length(crawlRight) >= 1){
+    for (i in 1:length(crawlRight)){
+      q_pastPath = c(q_pastPath, currPath)
+    }
+  }
+  
+  # Stopping rule = (crawl = -1 (at the src) and q_branching is empty)
+  while( (crawl != -1) || (length(q_branching)!=0) ){
+    
+    #print(crawl)
+    curr = crawl           # Move to the previous vertex
+    tmp = prevVertexList[[curr]] 
+    tmp = tmp[length(tmp):1]
+    crawl = tmp[length(tmp)]
+    crawlRight = tmp[-length(tmp)]
+    q_branching = c( q_branching, rep(curr, length(crawlRight)) )
+    q_newBranch = c(q_newBranch, crawlRight)
+    currPath = c(currPath, curr)    
+    if (length(crawlRight) >= 1){
+      for (i in 1:length(crawlRight)){
+        q_pastPath = c(q_pastPath, list(currPath))
+      }
+    }
+    
+    # When it reached the src, report one shortest path
+    if (crawl == -1){
+      # found one shortest path
+      listPaths[[listPathsInd]] = currPath[length(currPath):1]          
+      listPathsInd = listPathsInd + 1
+      
+      # Further if branching vertexes remain, go to the last q_branching and remove queues.
+      if (length(q_branching)!=0){
+        curr = tail(q_branching, 1)                 # go to the last branching vertex
+        crawl = tail(q_newBranch, 1)
+        currPath = q_pastPath[[length(q_pastPath)]]
+        q_branching = q_branching[-length(q_branching)]     # LIFO
+        q_newBranch = q_newBranch[-length(q_newBranch)]
+        q_pastPath = q_pastPath[-length(q_pastPath)]
+      }
+    }
+  }
+
+  return(listPaths)
+}
+```
+
+
+```{r}
+getEdges <- function(Gmat){
+  edges = list()
+  i <- 1
+  n <- nrow(Gmat)
+  for (i in 1:n){
+    for (j in which(Gmat[i, ] == 1)){
+      if (j > i){
+        e = list(c(i, j))
+        edges = append(edges, e)
+      }
+    }
+  }
+  return(edges)
+}
+```
+
+```{r}
+myEdgeBetweenness <- function(Gadjmat){
+  # Initialize var
+  n <- nrow(Gadjmat)
+  edgeList <- getEdges(Gadjmat)
+  nEdges <- length(edgeList)
+  edgeBetweenness <- numeric(nEdges)
+  nShPathsMat <- matrix(0, n, n)
+  nShPathViaAnEdge <- matrix(0, n, n)
+  betnnessSummand <- matrix(0, nEdges, n*(n-1)/2)   # May use lots of memory for large n
+  BFSout <- list()
+
+  # BFS for each vertex
+  for (i in 1:n){
+    BFSout[[i]] <- BFS_unweightedGraph(Gadjmat, i)
+  }
+  
+  # Count the number of the shortest paths between i and j
+  for (i in c(1:(n-1))){
+    for (j in c((i+1):n)){
+      nShPathsMat[i,j] <- BFSout[[i]]$nPaths[j]
+    }
+  }
+  
+  # Compute betnnessSummand
+  for (i in c(1:(n-1))){
+    for (j in c((i+1):n)){
+      # Extract shPaths, which is done only once per pair
+      pathij <- BFS_unweightedGraph_getPaths(BFSout[[i]], i, j)
+      
+      # Count shPaths going through a give edge
+      for (k in 1:nEdges){
+        e <- edgeList[[k]]
+        count <- 0
+        for (l in 1:length(pathij)){
+          path_l = pathij[[l]] 
+          # Check if a path contains the edge e
+          for (m in 1:(length(path_l)-1)){
+            if (all(path_l[m:(m+1)] == e) | all(path_l[m:(m+1)] == e[2:1])){
+              count <- count + 1
+            }
+          }
+        }
+        summand <- count / nShPathsMat[i,j]
+        # Indexing upper matrix cells in a linear fashion
+        betnnessSummand[k, (i-1)*(2*n-i)/2 + (j-i)] <- summand
+      }
+    }
+  }
+  
+  # Compute edge betweenness
+  edgeBetweenness = rowSums(betnnessSummand)
+  
+  # output
+  n = length(edgeList)
+  edgeMat = matrix(NA, 2, n)
+  for (i in 1:n){
+    edgeMat[, i] = cbind(edgeList[[i]][1], edgeList[[i]][2])
+  }
+  out = list(edgeMat=edgeMat, edgeBetweenness=edgeBetweenness)
+  return(out)
+}
+```
+
+
+```{r}
+isConnected <- function(Gadjmat){
+  n <- nrow(Gadjmat)
+  BFS1 <- BFS_unweightedGraph(Gadjmat, 1)
+  return(!any(BFS1$nPaths == 0))
+}
+```
+
+
+```{r}
+GirvanNewman1step <- function(Gmat){
+  # Initialize
+  n <- nrow(Gmat)
+  
+  # Check input matrix
+  if (!isConnected(Gmat)){
+    print("Input adj matrix is not connected, so it cannot be searched by this function.")
+    return()
+  }
+  
+  edgeList <- getEdges(Gmat)
+  edgeBetweenness <- myEdgeBetweenness(Gmat)$edgeBetweenness
+  ind <- which.max(edgeBetweenness)
+  e <- edgeList[[ind]]  
+  Gmat2 <- Gmat
+  Gmat2[e[1], e[2]] <- 0
+  Gmat2[e[2], e[1]] <- 0
+  isConnected <- isConnected(Gmat2)
+  
+  out <- list(n=n, edgeList=edgeList, edgeBetweenness=edgeBetweenness, 
+              removedEdge=e, outAdjmat=Gmat2, isConnected=isConnected)
+  return(out)
+}
+```
+
+
+
+### Construct/visualize a toy graph
+
+Let's consider a toy network with 8 nodes which is an unweighted graph. 
+
+```{r}
+          #  node  1,2,3,4,5,6,7,8 
+Gadjmat = rbind( c(0,1,1,0,1,0,0,0), 
+                 c(1,0,0,1,0,0,0,0), 
+                 c(1,0,0,0,1,0,0,0),
+                 c(0,1,0,0,1,1,0,0),
+                 c(1,0,1,1,0,0,0,0),
+                 c(0,0,0,1,0,0,1,1),
+                 c(0,0,0,0,0,1,0,0),
+                 c(0,0,0,0,0,1,0,0) )
+```
+
+The *igraph* library gives us nice visualization of graphs.
+
+```{r}
+grp1 <- graph_from_adjacency_matrix(Gadjmat, mode="undirected", diag=FALSE)
+set.seed(1); plot(grp1, vertex.size=25, vertex.label.cex=1.5)
+```
+
+Using the BFS, we can get the shortest paths between all pairs of nodes. Total 33 shortest paths are found. 
+
+```{r}
+n = nrow(Gadjmat)
+BFSout = vector("list", length=n)
+for (i in 1:n){
+  BFSout[[i]] <- BFS_unweightedGraph(Gadjmat, i)
+}
+
+allPaths = list()
+for (src in 1:(n-1)){
+  for (dest in c((src+1):n)){
+    tmpout = BFS_unweightedGraph_getPaths(BFSout[[src]], src, dest)
+    allPaths = append(allPaths, tmpout)
+  }
+}
+
+allPaths
+```
+
+From the shortest paths, edge betweenesses ([Wikipedia](https://en.wikipedia.org/wiki/Girvan%E2%80%93Newman_algorithm#Edge_betweenness_and_community_structure)) can be obtained.
+
+```{r}
+myEdgeBetweenness(Gadjmat)
+```
+
+### How Girvan-Newman algorithm works
+
+Within *GirvanNewman1step()*, the BFS and *myEdgeBetweenness()* are implemented to find and remove the edge with the highest edge betweenness. In the first running, the edge $(4, 6)$ is removed due to its highest centrality, and we find two disconnected clusters. 
+
+```{r}
+out <- GirvanNewman1step(Gadjmat)
+out$isConnected
+```
+
+```{r}
+grp2 <- graph_from_adjacency_matrix(out$outAdjmat, mode="undirected", diag=FALSE)
+set.seed(1); plot(grp2, vertex.size=25, vertex.label.cex=1.5)
+```
+
+
+
+
+
+## 
+
+##
+
+
+
+
+
+
+
+
+
+
