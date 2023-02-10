@@ -4,6 +4,9 @@ It will be updated on a regular basis.
 
 <p>&nbsp;</p> 
 
+> **LinkedIn**: https://www.linkedin.com/in/jungsik-noh-8a33ab129/ 
+
+
 # Contents
 
 - [Implementation of Apriori Algorithm in **Python**](MicroProjects/ImplementationAprioriAlgo.md)
