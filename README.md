@@ -11,7 +11,7 @@ It will be updated on a regular basis.
     It finds frequent itemsets from large-scale transaction data recorded at the 
     point-of-sale (POS).
    
-- Implementation of Breadth First Search (BFS) and Girvan-Newman Algorithm for Graph analysis in **R**
+- [Implementation of Breadth First Search (BFS) and Girvan-Newman Algorithm for Graph analysis in **R**](https://rpubs.com/JungsikNoh/Implement_GirvanNewman_GraphAnalysis_R)
   - Girvan-Newman Algorithm is for community detection in a network, that is, a graph. 
     Its implementation first starts with BFS to find minimum spanning trees in a graph. 
     Then we can compute the edge betweenness which is the number of the shortest paths going through 
