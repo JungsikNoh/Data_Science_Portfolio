@@ -1,0 +1,251 @@
+---
+title: "Implementation of Hierarchical Clustering (HCL) Algorithm in R"
+output:
+  html_document:
+    df_print: paged
+---
+
+##### *Jungsik Noh*
+
+I implement the Hierarchical Clustering (HCL) algorithm for 1-dimensional data from scratch using R. HCL can be applied in multiple ways, depending on how to calibrate distances between clusters. Two kinds of linkage methods are implemented below. In *centroid linkage method*, a distance between clusters is defined by the distance between centroids. In *single linkage method*, the distance between clusters is defined by the shortest distance between data points in each cluster. 
+
+### Centroid linkage method
+
+```{r}
+myHCL <- function(x){
+  # Implementation of Hierarchical clustering of a 1-dim'l vector
+  # Distance between clusters is defined by the distance between centroids 
+  # (centroid linkage method)
+  
+  # Initialize
+  x <- sort(x)
+  n <- length(x)
+  val1 <- val2 <- CLid1 <- CLid2 <- newCLid <- newCentroid <- NA
+  mergeHistory <- data.frame(val1, val2, CLid1, CLid2, newCLid, newCentroid)
+  mergeInd <- 1
+  newCLid <- n+1                    # node IDs in the outcome dendrogram
+  CLidvec <- c(1:n)                 # CLid's for original data    
+  CLlabel <- c(1:n)                 # Initial cluster labels  
+  K <- n                            # K: Num of clusters
+  centroids <- x                    # Initial centroids = data vector
+  centroidsLabel <- c(1:n)          # CLid's for centroids vector
+  dataToCentroids <- x              # Map from data points to centroids at each step
+  dataToCentroidsMat <- cbind(dataToCentroids)
+  out <- vector("list", K-3)
+  
+  while(K > 1){
+    cat(paste0("< K= ", K-1, " > \n"))
+    pDist <- dist(centroids)
+    d_min <- min(pDist)
+    ind <- which((as.matrix(pDist) == d_min), arr.ind=TRUE)[1, ]
+    CLid1 <- centroidsLabel[ind[1]]
+    CLid2 <- centroidsLabel[ind[2]]
+    
+    val1 <- centroids[ind[1]]; val2 <- centroids[ind[2]]
+    ind1 <- which(dataToCentroids ==  val1)
+    ind2 <- which(dataToCentroids == val2)
+    
+    newCentroid <- 
+      (val1 * length(ind1) + val2 * length(ind2))/(length(ind1) + length(ind2))
+    
+    # Merging information
+    mergeInfo <- c(val1, val2, CLid1, CLid2, newCLid, newCentroid)
+    mergeHistory[mergeInd, ] <- mergeInfo
+    
+    # Merge
+    centroids <- centroids[-ind]
+    centroids <- c(centroids, newCentroid)
+    ord <- order(centroids)
+    centroids <- centroids[ord]
+    
+    centroidsLabel <- centroidsLabel[-ind]
+    centroidsLabel <- c(centroidsLabel, newCLid)
+    centroidsLabel <- centroidsLabel[ord]
+    
+    tmp1 <- which(CLidvec == CLid1)
+    CLidvec[tmp1] <- newCLid
+    tmp2 <- which(CLidvec == CLid2)
+    CLidvec[tmp2] <- newCLid
+    
+    for (i in c(1:(K-1))){
+      tmp <- centroidsLabel[i]
+      CLlabel[which(CLidvec == tmp)] <- i
+    }
+    
+    for (i in c(1:(K-1))){
+      tmp <- which(CLlabel == i)
+      dataToCentroids[tmp] <- centroids[i]
+    }
+    
+    # Update merging indexes
+    newCLid <- newCLid + 1
+    mergeInd <- mergeInd + 1
+    
+    # Output data.frame
+    out1 <- list(data=x, CLlabel=CLlabel, centroids=centroids)
+    print(out1)
+    dataToCentroidsMat <- cbind(dataToCentroidsMat, dataToCentroids)
+    out[[mergeInd-1]] <- out1
+    K <- K-1
+  }
+  colnames(dataToCentroidsMat) <- NULL
+  out3 <- list(steps=out, dataToCentroidsMat=dataToCentroidsMat, mergeHistory=mergeHistory)
+  return(out3)
+}
+```
+
+
+While running, the function displays details of cluster labels and cluster centroids while it is aggregating all the data points into the final one cluster. 
+
+```{r message=FALSE, warning=FALSE}
+dat <- c(29,33,35,37,41,43,47,51,53,60,64,70)
+out <- myHCL(dat)
+```
+
+
+Output contains merging history and mappings between data points and their centroids to track the clustering results and generate a dendrogram later.
+
+```{r}
+out$mergeHistory 
+```
+
+Here the 1st column shows data points and the next columns show their centroids during the merging process of the HCL. 
+
+```{r}
+out$dataToCentroidsMat
+```
+
+### Single linkage method
+
+```{r}
+minDistOfLists <- function(listA, listB){
+  a <- unlist(listA)
+  b <- unlist(listB)
+  min0 <- Inf
+  for (i in 1:length(a)){
+    for (j in 1:length(b)){
+      dist0 <- abs(a[i] - b[j])
+      min0 <- min(min0, dist0)
+    }
+  }
+  return(min0)
+}
+```
+
+```{r}
+myHCL_mindist <- function(x){
+  # Implementation of Hierarchical clustering of a 1-dim'l vector
+  # Distance between clusters is defined by the shortest distance
+  # (single linkage method)
+  
+  # Initialize
+  x <- sort(x)
+  n <- length(x)
+  val1 <- val2 <- CLid1 <- CLid2 <- newCLid <- newCentroid <- NA
+  mergeHistory <- data.frame(val1, val2, CLid1, CLid2, newCLid, newCentroid)
+  mergeInd <- 1
+  newCLid <- n+1                    # node IDs in the outcome dendrogram
+  CLidvec <- c(1:n)                 # CLid's for original data    
+  CLlabel <- c(1:n)                 # Initial cluster labels  
+  K <- n                            # K: Num of clusters
+  centroids <- x                    # Initial centroids = data vector
+  centroidsLabel <- c(1:n)          # CLid's for centroids vector
+  dataToCentroids <- x              # Map from data points to centroids at each step
+  dataToCentroidsMat <- cbind(dataToCentroids)
+  out <- vector("list", K-1)
+  
+  CLsets <- vector("list", n)
+  for (i in 1:n){
+    CLsets[[i]] = x[i]
+  }
+  
+  while(K > 1){
+    cat(paste0("< K= ", K-1, " > \n"))
+    pDist <- matrix(0, K, K)
+    # The minimum of the distances between any two points in each cluster
+    for (i in c(1:(K-1))){
+      for (j in c((i+1):K)){
+        pDist[j,i] <- minDistOfLists(CLsets[[i]], CLsets[[j]])
+      }
+    }
+    pDist <- pDist + t(pDist)
+    diag(pDist) = Inf
+    
+    d_min <- min(pDist)
+    ind <- which((as.matrix(pDist) == d_min), arr.ind=TRUE)[1, ]
+    CLid1 <- centroidsLabel[ind[1]]
+    CLid2 <- centroidsLabel[ind[2]]
+    
+    val1 <- centroids[ind[1]]; val2 <- centroids[ind[2]]
+    ind1 <- which(dataToCentroids ==  val1)
+    ind2 <- which(dataToCentroids == val2)
+    
+    newCentroid <- 
+      (val1 * length(ind1) + val2 * length(ind2))/(length(ind1) + length(ind2))
+      
+    # Merging information
+    mergeInfo <- c(val1, val2, CLid1, CLid2, newCLid, newCentroid)
+    mergeHistory[mergeInd, ] <- mergeInfo
+    
+    # Merge
+    centroids <- centroids[-ind]
+    centroids <- c(centroids, newCentroid)
+    ord <- order(centroids)
+    centroids <- centroids[ord]
+    
+    centroidsLabel <- centroidsLabel[-ind]
+    centroidsLabel <- c(centroidsLabel, newCLid)
+    centroidsLabel <- centroidsLabel[ord]
+    
+    tmp1 <- which(CLidvec == CLid1)
+    CLidvec[tmp1] <- newCLid
+    tmp2 <- which(CLidvec == CLid2)
+    CLidvec[tmp2] <- newCLid
+    
+    for (i in c(1:(K-1))){
+      tmp <- centroidsLabel[i]
+      CLlabel[which(CLidvec == tmp)] <- i
+    }
+    
+    for (i in c(1:(K-1))){
+      tmp <- which(CLlabel == i)
+      dataToCentroids[tmp] <- centroids[i]
+      CLsets[[i]] <- x[tmp]
+    }
+    
+    # Update merging indexes
+    newCLid <- newCLid + 1
+    mergeInd <- mergeInd + 1
+    
+    # Output data.frame
+    out1 <- list(data=x, CLlabel=CLlabel, centroids=centroids)
+    print(out1)
+    dataToCentroidsMat <- cbind(dataToCentroidsMat, dataToCentroids)
+    out[[mergeInd-1]] <- out1
+    K <- K-1
+  }
+  colnames(dataToCentroidsMat) <- NULL
+  out3 <- list(steps=out, dataToCentroidsMat=dataToCentroidsMat, mergeHistory=mergeHistory)
+  return(out3)
+}
+
+```
+
+```{r}
+dat <- c(29,33,35,37,41,43,47,51,53,60,64,70)
+out <- myHCL_mindist(dat)
+```
+
+For example, $K=3$ clustering results are quite different in the two methods. 
+Detailed output has the same format as in the above.
+
+```{r}
+out$mergeHistory 
+```
+
+```{r}
+out$dataToCentroidsMat
+```
+
+
+
