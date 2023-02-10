@@ -4,7 +4,7 @@
 Apriori algorithm is used for association rule learning and market basket analysis. It finds frequent itemsets from large-scale transaction data recorded at the point-of-sale (POS).
 
 ## Apriori algorithm from scratch
-____
+
 
 The implementation consists of three functions:
 - *Apriori(transactionDict, threshold)* 
@@ -142,12 +142,11 @@ def findBaskets(itemList, transactionDict):
             key = list(transactionDict.keys())[b]
             basketKeys.append(key)
             
-    print(basketKeys)
     return basketKeys
 ```
 
 ## An example
-____
+
 Suppose there are 150 items, numbered 1 to 150, and also 150 baskets, also numbered 1 to 150.
 An item $i$ is in a basket $b$ if and only if $i$ divides $b$ with no remainder.
 
@@ -430,9 +429,6 @@ items = ['5', '20']
 findBaskets(items, transactionDict)
 ```
 
-    [20, 40, 60, 80, 100, 120, 140]
-    
-
 
 
 
@@ -446,9 +442,6 @@ findBaskets(items, transactionDict)
 ```python
 findBaskets(['1', '10', '2'], transactionDict)
 ```
-
-    [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]
-    
 
 
 
