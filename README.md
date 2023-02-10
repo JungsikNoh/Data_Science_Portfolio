@@ -6,7 +6,7 @@ It will be updated on a regular basis.
 
 # Contents
 
-- Implementation of Apriori Algorithm in **Python**
+- [Implementation of Apriori Algorithm in **Python**](MicroProjects/ImplementationAprioriAlgo.md)
   - Apriori algorithm is used for association rule learning and market basket analysis. 
     It finds frequent itemsets from large-scale transaction data recorded at the 
     point-of-sale (POS).
