@@ -7,7 +7,13 @@ It will be updated on a regular basis.
 > **LinkedIn**: https://www.linkedin.com/in/jungsik-noh-8a33ab129/ 
 
 
-# Contents
+## Research Projects
+
+
+
+
+
+## Micro Projects
 
 - [Implementation of Apriori Algorithm in **Python**](MicroProjects/ImplementationAprioriAlgo.md)
   - Apriori algorithm is used for association rule learning and market basket analysis. 
