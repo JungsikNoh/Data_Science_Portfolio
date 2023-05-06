@@ -10,7 +10,7 @@ It will be updated on a regular basis.
 
 ## Research Projects
 
-<img align="left" width="300" height="200" src="https://github.com/JungsikNoh/Data_Science_Portfolio/blob/main/doc/photo-COVID-unsplash-1585858228804-7caf9961c49d.jpg"> **[Estimation of the fraction of COVID-19 infected people in U.S. states and countries worldwide](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0246772)** 
+<img align="left" width="250" height="150" src="https://github.com/JungsikNoh/Data_Science_Portfolio/blob/main/doc/photo-COVID-unsplash-1585858228804-7caf9961c49d.jpg"> **[Estimation of the fraction of COVID-19 infected people in U.S. states and countries worldwide](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0246772)** 
 published in 2021 at PLOS ONE ([**GitHub**](https://github.com/JungsikNoh/COVID19_Estimated-Size-of-Infectious-Population))
 
 This study estimated actual daily numbers of COVID infections including unconfirmed or unreported cases. 
@@ -22,7 +22,7 @@ Its [GitHub repository](https://github.com/JungsikNoh/COVID19_Estimated-Size-of-
 
 ##
 
-<img align="left" width="300" height="200" src="https://github.com/JungsikNoh/Data_Science_Portfolio/blob/main/doc/Combined%20Stacks1121-2.png"> [**Granger-causal inference of the lamellipodial actin regulator hierarchy by live cell imaging without perturbation**](https://www.cell.com/cell-systems/pdfExtended/S2405-4712(22)00224-1) published in 2022 at Cell Systems ([**GitHub**](https://github.com/JungsikNoh/Granger-Causality-Analysis-of-Lamellipodia))
+<img align="left" width="250" height="150" src="https://github.com/JungsikNoh/Data_Science_Portfolio/blob/main/doc/Combined%20Stacks1121-2.png"> [**Granger-causal inference of the lamellipodial actin regulator hierarchy by live cell imaging without perturbation**](https://www.cell.com/cell-systems/pdfExtended/S2405-4712(22)00224-1) published in 2022 at Cell Systems ([**GitHub**](https://github.com/JungsikNoh/Granger-Causality-Analysis-of-Lamellipodia))
 
 The goal of this paper is to determine cause-effect relationships between protein activities that drive cell motion based on their activity time series extracted from microscopic videos of moving cells. 
 I developed an innovative time series model and causal inference pipeline equipped with GUI to analyze tens of thousands of the local protein activity time courses. 
