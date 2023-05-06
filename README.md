@@ -27,9 +27,6 @@ Its [GitHub repository](https://github.com/JungsikNoh/COVID19_Estimated-Size-of-
 The goal of this paper is to determine cause-effect relationships between protein activities that drive cell motion based on their activity time series extracted from microscopic videos of moving cells. 
 I developed an innovative time series model and causal inference pipeline equipped with GUI to analyze tens of thousands of the local protein activity time courses. 
 
-<p>&nbsp;</p>
- 
-
 ##
 
 <br />
