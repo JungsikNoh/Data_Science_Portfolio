@@ -6,12 +6,25 @@ It will be updated on a regular basis.
 
 > **LinkedIn**: https://www.linkedin.com/in/jungsik-noh-8a33ab129/ 
 
+<p>&nbsp;</p>
 
 ## Research Projects
 
+<img align="left" width="300" height="200" src="https://github.com/JungsikNoh/Data_Science_Portfolio/blob/main/doc/photo-COVID-unsplash-1585858228804-7caf9961c49d.jpg">  **[Estimation of the fraction of COVID-19 infected people in U.S. states and countries worldwide](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0246772)** 
+published in 2021 at PLOS ONE ([**GitHub**](https://github.com/JungsikNoh/COVID19_Estimated-Size-of-Infectious-Population))
+
+This study estimated actual daily numbers of COVID infections including unconfirmed or unreported cases. Severe under-ascertainment of COVID cases was found to be universal across 50 U.S. states and countries worldwide. Our estimates of cumulative incidence were in line with the seroprevalence rates in 46 U.S. states sampled in 2020. We estimated that the COVID cases in the U.S. were likely to be nearly four times more than the reported total cases as of Oct. 2020. This study demonstrated that the regional severity of the COVID-19 pandemic had been misguided by the under-reported numbers of COVID infections.
+
+Its [GitHub repository](https://github.com/JungsikNoh/COVID19_Estimated-Size-of-Infectious-Population) had reported daily estimates of COVID-19 cases from August 22, 2020 to October 7, 2022 on a daily or weekly basis. 
+
+#
 
 
 
+
+
+
+<p>&nbsp;</p>
 
 ## Micro Projects
 
