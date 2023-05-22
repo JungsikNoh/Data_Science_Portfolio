@@ -18,6 +18,8 @@ Our estimates of cumulative incidence were in line with the seroprevalence rates
 We estimated that the COVID cases in the U.S. were likely to be nearly four times more than the reported total cases as of Oct. 2020. 
 This study demonstrated that the regional severity of the COVID-19 pandemic had been misguided by the under-reported numbers of COVID infections.
 
+A [**Medium article**](https://nohjssunny.medium.com/the-actual-highest-number-of-daily-covid-19-cases-in-the-us-is-estimated-to-be-about-400-000-in-e91bf1cce8e0) posted in 2020 quickly explains what went wrong with the numbers of daily confirmed COVID-19 cases worldwide.
+
 Its [GitHub repository](https://github.com/JungsikNoh/COVID19_Estimated-Size-of-Infectious-Population) had reported daily estimates of COVID-19 cases from August 22, 2020 to October 7, 2022 on a daily or weekly basis. 
 
 ##
