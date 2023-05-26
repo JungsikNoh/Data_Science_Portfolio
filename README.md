@@ -1,15 +1,13 @@
 # Data Science Portfolio - Jungsik Noh
 This portfolio contains my data science projects for self-learning purposes.
 It will be updated on a regular basis.
-
-<p>&nbsp;</p> 
+ 
 
 
 ## Contact
 > **Email**: jungsik.noh@utsouthwestern.edu     <br />
 > **LinkedIn**: https://www.linkedin.com/in/jungsik-noh-8a33ab129/ 
-
-<p>&nbsp;</p>
+ 
 
 
 ## Research Projects
@@ -26,17 +24,15 @@ A [**Medium article**](https://nohjssunny.medium.com/the-actual-highest-number-o
 
 Its [GitHub repository](https://github.com/JungsikNoh/COVID19_Estimated-Size-of-Infectious-Population) had reported daily estimates of COVID-19 cases from August 22, 2020 to October 7, 2022 on a daily or weekly basis. 
 
-##
+#
 
 <img align="left" width="250" height="150" src="https://github.com/JungsikNoh/Data_Science_Portfolio/blob/main/doc/Combined%20Stacks1121-2.png"> [**Granger-causal inference of the lamellipodial actin regulator hierarchy by live cell imaging without perturbation**](https://www.cell.com/cell-systems/pdfExtended/S2405-4712(22)00224-1) published in 2022 at Cell Systems ([**GitHub**](https://github.com/JungsikNoh/Granger-Causality-Analysis-of-Lamellipodia))
 
 The goal of this paper is to determine cause-effect relationships between protein activities that drive cell motion based on their activity time series extracted from microscopic videos of moving cells. 
 I developed an innovative time series model and causal inference pipeline equipped with GUI to analyze tens of thousands of the local protein activity time courses. 
-
-##
-
-<br />
-
+ 
+ 
+<br/>
 
 ## Micro Projects
 
