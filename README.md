@@ -4,9 +4,13 @@ It will be updated on a regular basis.
 
 <p>&nbsp;</p> 
 
+
+## Contact
+> **Email**: jungsik.noh@utsouthwestern.edu     <br />
 > **LinkedIn**: https://www.linkedin.com/in/jungsik-noh-8a33ab129/ 
 
 <p>&nbsp;</p>
+
 
 ## Research Projects
 
@@ -18,7 +22,7 @@ Our estimates of cumulative incidence were in line with the seroprevalence rates
 We estimated that the COVID cases in the U.S. were likely to be nearly four times more than the reported total cases as of Oct. 2020. 
 This study demonstrated that the regional severity of the COVID-19 pandemic had been misguided by the under-reported numbers of COVID infections.
 
-A [**Medium article**](https://nohjssunny.medium.com/the-actual-highest-number-of-daily-covid-19-cases-in-the-us-is-estimated-to-be-about-400-000-in-e91bf1cce8e0) posted in 2020 quickly explains what went wrong with the numbers of daily confirmed COVID-19 cases worldwide.
+A [**Medium article**](https://nohjssunny.medium.com/the-actual-highest-number-of-daily-covid-19-cases-in-the-us-is-estimated-to-be-about-400-000-in-e91bf1cce8e0) posted in 2020 explains what went wrong with the numbers of daily confirmed COVID-19 cases worldwide.
 
 Its [GitHub repository](https://github.com/JungsikNoh/COVID19_Estimated-Size-of-Infectious-Population) had reported daily estimates of COVID-19 cases from August 22, 2020 to October 7, 2022 on a daily or weekly basis. 
 
@@ -62,8 +66,12 @@ I developed an innovative time series model and causal inference pipeline equipp
     It can also provide an order of data points based on their pairwise distances, 
     which is often useful for various data visualizations. 
  
+ 
+## Certificates
+- [MicroMasters program certificate in Big Data By edX](https://credentials.edx.org/credentials/07ac775f581a4bc5bcd975d77c26ea1d/)
+- [SQL Essential Training By LinkedIn](https://www.linkedin.com/learning/certificates/168041ae26e672180d73d1f7c48d5dec48effbed0aae8b8168a73f572fa2142f) 
+- [Python for Data Science and Machine Learning Bootcamp By Udemy](https://www.udemy.com/certificate/UC-6dd2f854-bde5-4dd5-8d39-f3b75804cec7/) 
 
 
-# Contact
-Jungsik Noh (jungsik.noh@utsouthwestern.edu)
+
 
