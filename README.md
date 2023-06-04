@@ -10,6 +10,10 @@ It will be updated on a regular basis.
 
 ## Micro Projects
 
+- [nycflights13 database file](https://github.com/JungsikNoh/Data_Science_Portfolio/blob/main/MicroProjects/nycflights13.db)
+  - A database (.db) file converted from an [R package nycflights13](https://cran.r-project.org/web/packages/nycflights13/index.html) that contains 
+    a dataset of all flights departing NYC in 2013 together with related tables of airlines, airports, weather and planes.
+
 - [Implementation of Apriori Algorithm in **Python**](MicroProjects/ImplementationAprioriAlgo.md)
   - Apriori algorithm is used for association rule learning and market basket analysis. 
     It finds frequent itemsets from large-scale transaction data recorded at the 
