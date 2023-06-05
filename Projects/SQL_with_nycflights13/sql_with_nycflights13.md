@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14rrWVXvlPyCMtWg6wBA9wcAMm3vP5APx?usp=sharing) for a version with Plotly figures
+
 # SQL with nycflights13 data
 
 'nycflights13' is a relational database with airline on-time data for all flights departing NYC in 2013 as well as related tables of airlines, airports, planes and weather.
@@ -1055,7 +1057,7 @@ pd.read_sql_query(q, conn)
 
 ## 2. Top 10 days with the largest number of flights
 
-- The busiest days in 2013 include 11/27/2013 (the end of Thanksgiving), 12/2/2013 (beginning of December), and the others are in July. 
+- The busiest days in 2013 include 11/27/2013 (the end of Thanksgiving) and 12/2/2013 (beginning of December). The others are in July. 
 
 
 ```python
@@ -1764,7 +1766,7 @@ plt.grid()
 
 
     
-![png](output_26_0.png)
+![png](output_27_0.png)
     
 
 
@@ -1915,7 +1917,7 @@ plt.grid()
 
 
     
-![png](output_30_0.png)
+![png](output_31_0.png)
     
 
 
