@@ -10,13 +10,18 @@ It will be updated on a regular basis.
 
 ## Projects
 
+<img align="left" width="250" height="150" src="doc/jorik-kleen-vAgSEXaMhZ8-unsplash.jpg"> [**Customer Churn Prediction Models**](https://github.com/JungsikNoh/CustomerChurnPredictionModel)
+
+In this project I demonstrate the steps for building up a churn prediction model using a synthetic insurance customer dataset that mimic real-world dirty data.
+An optimal model was searched for across logistic regression, multilayer perceptron, random forest, and decision tree models.
+
+#
+
 <img align="left" width="250" height="150" src="doc/bao-menglong--FhoJYnw-cg-unsplash.jpg"> [**SQL with nycflights13**](/Projects/SQL_with_nycflights13/sql_with_nycflights13.ipynb)
 
 'nycflights13' is a relational database with airline on-time data for all flights departing NYC in 2013 as well as related tables of airlines, airports, planes and weather. In this notebook, I perform an exploratory and descriptive analysis mainly looking into how the departure delay time is related to other variables.
-<br/>
 
-
-##
+#
  
  
 <br/>
