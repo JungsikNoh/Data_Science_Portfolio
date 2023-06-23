@@ -10,7 +10,7 @@ It will be updated on a regular basis.
 
 ## Projects
 
-<img align="left" width="250" height="150" src="doc/satelliteImage_damage.jpeg"> [**Anomaly Detection Using Autoencoder with Satellite Images of Hurricane Damage and MNIST digits**](Projects/AnomalyDetection_Autoencoder/AnomalyDetection_Autoencoder_SatelliteImagesHurricaneDamage.ipynb)
+<img align="left" width="250" height="150" src="doc/satelliteImage_damage.jpeg"> [**Anomaly Detection Using Autoencoder with Satellite Images of Hurricane Damage and MNIST digits**](Projects/AnomalyDetection_Autoencoder/Copy_of_AnomalyDetection_Autoencoder_SatelliteImagesHurricaneDamage.ipynb)
 
 Using autoencoders, anomaly detection is implemented for datasets of satellite images of hurricane damage and MNIST hand-written digits.
 Data points with the largest reconstruction errors showed abnormal images in each dataset.
