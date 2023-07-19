@@ -27,10 +27,9 @@ An optimal model was searched for across logistic regression, multilayer percept
 <img align="left" width="250" height="150" src="doc/bao-menglong--FhoJYnw-cg-unsplash.jpg"> [**SQL with nycflights13**](/Projects/SQL_with_nycflights13/sql_with_nycflights13.ipynb)
 
 'nycflights13' is a relational database with airline on-time data for all flights departing NYC in 2013 as well as related tables of airlines, airports, planes and weather. In this notebook, I perform an exploratory and descriptive analysis mainly looking into how the departure delay time is related to other variables.
-
+ 
 #
- 
- 
+
 <br/>
 
 
@@ -58,37 +57,6 @@ An optimal model was searched for across logistic regression, multilayer percept
   - HCL is one of the most useful clustering algorithms. 
     It can also provide an order of data points based on their pairwise distances, 
     which is often useful for various data visualizations. 
-
-<br/>
-
-## Research Projects
-
-<img align="left" width="250" height="150" src="https://github.com/JungsikNoh/Data_Science_Portfolio/blob/main/doc/photo-COVID-unsplash-1585858228804-7caf9961c49d.jpg"> **[Estimation of the fraction of COVID-19 infected people in U.S. states and countries worldwide](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0246772)** 
-published in 2021 at PLOS ONE ([**GitHub**](https://github.com/JungsikNoh/COVID19_Estimated-Size-of-Infectious-Population))
-
-This study estimated actual daily numbers of COVID infections including unconfirmed or unreported cases. 
-Its estimates of cumulative incidence were in line with the seroprevalence rates in 46 U.S. states sampled in 2020. 
-The study estimated that the COVID cases in the U.S. were likely to be nearly four times more than the reported total cases as of Oct. 2020. 
-It demonstrated that the regional severity of the COVID-19 pandemic had been misguided by the under-reported numbers of COVID infections.
-
-A [**Medium article**](https://nohjssunny.medium.com/the-actual-highest-number-of-daily-covid-19-cases-in-the-us-is-estimated-to-be-about-400-000-in-e91bf1cce8e0) posted in 2020 explains what went wrong with the numbers of daily confirmed COVID-19 cases worldwide.
-
-Its [GitHub repository](https://github.com/JungsikNoh/COVID19_Estimated-Size-of-Infectious-Population) had reported daily estimates of COVID-19 cases from August 22, 2020, to October 7, 2022, on a daily or weekly basis. 
-
-#
-
-<img align="left" width="250" height="150" src="https://github.com/JungsikNoh/Data_Science_Portfolio/blob/main/doc/Combined%20Stacks1121-2.png"> [**Granger-causal inference of the lamellipodial actin regulator hierarchy by live cell imaging without perturbation**](https://www.cell.com/cell-systems/pdfExtended/S2405-4712(22)00224-1) published in 2022 at Cell Systems ([**GitHub**](https://github.com/JungsikNoh/Granger-Causality-Analysis-of-Lamellipodia))
-
-The goal of this paper is to determine cause-effect relationships between protein activities that drive cell motion based on their activity time series extracted from microscopic videos of moving cells. 
-I developed an innovative time series model and causal inference pipeline equipped with GUI to analyze tens of thousands of local protein activity time courses. 
-
-#
-
-<img align="left" width="250" height="150" src="doc/solen-feyissa-AAMldegB0x8-unsplash (1).jpg"> **Jittering neuron segmentation for 3D calcium imaging of deforming tissues** ([**GitHub**](https://github.com/JungsikNoh/JitteringNeuronTracker))
-
-JitteringNeuronTracker extracts dynamic Region-Of-Interests (ROIs) of jittering and flickering small objects (single neurons) in 3D calcium images of deforming live tissues.
-
-#
 
 <br/>
 
