@@ -39,7 +39,7 @@ An optimal model was searched for across logistic regression, multilayer percept
   - A database (.db) file converted from an [R package nycflights13](https://cran.r-project.org/web/packages/nycflights13/index.html) that contains 
     a dataset of all flights departing NYC in 2013 together with related tables of airlines, airports, weather and planes.
 
-- [Implementation of Apriori Algorithm in Python](MicroProjects/ImplementationAprioriAlgo.md)
+- [Implementation of Apriori Algorithm in Python](https://github.com/JungsikNoh/Data_Science_Portfolio/blob/main/MicroProjects/ImplementationAprioriAlgo.md)
   - Apriori algorithm is used for association rule learning and market basket analysis. 
     It finds frequent itemsets from large-scale transaction data recorded at the 
     point-of-sale (POS).
@@ -47,7 +47,7 @@ An optimal model was searched for across logistic regression, multilayer percept
 - [Implementation of Breadth First Search (BFS) and Girvan-Newman Algorithm for Graph analysis in R](https://rpubs.com/JungsikNoh/Implement_GirvanNewman_GraphAnalysis_R)
   - Girvan-Newman Algorithm is designed for community detection in a network.
    
-- [Implementation of Reservoir Sampling Algorithm in Java](MicroProjects/Implementation_ReservoirSampling_Java.md)
+- [Implementation of Reservoir Sampling Algorithm in Java](https://github.com/JungsikNoh/Data_Science_Portfolio/blob/main/MicroProjects/Implementation_ReservoirSampling_Java.md)
   - To analyze rapidly arriving data streams where we cannot store all the data points, 
     effective sampling strategies become critical.
     Among those, Reservoir Sampling allows us to keep a sample with a fixed size, say $k$, at any given time, 
