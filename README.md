@@ -15,20 +15,36 @@ It will be updated on a regular basis.
 Using autoencoders, anomaly detection is implemented for datasets of satellite images of hurricane damage and MNIST hand-written digits.
 Data points with the largest reconstruction errors showed abnormal images in each dataset.
 
-#
+<br clear="all"/>
+
+<hr style="clear: both;">
 
 <img align="left" width="250" height="150" src="doc/jorik-kleen-vAgSEXaMhZ8-unsplash.jpg"> [**Customer Churn Prediction Models**](https://github.com/JungsikNoh/CustomerChurnPredictionModel)
 
 In this project, I demonstrate the steps for building up a churn prediction model using a synthetic insurance customer dataset that mimic real-world dirty data.
 An optimal model was searched for across logistic regression, multilayer perceptron, random forest, and decision tree models.
 
-#
+<br clear="all"/>
+
+<hr style="clear: both;">
+
+<img align="left" width="250" height="150" src="doc/anne-nygard-x07ELaNFt34-unsplash.jpg"> [**Stock Market Time Series Forecasting Using Multi-Layer Perceptron**](https://colab.research.google.com/drive/14qvQmm62H2DMRmNClzYIpJyl2LVLJF2l)
+
+Stock price or return time series are almost impossible to predict—if they weren’t, markets would likely have collapsed long ago.
+In this analysis, I assess how far we can go with predictive modeling, even under such challenging conditions. 
+A Multi-Layer Perceptron (MLP) model is applied to predict whether each S&P500 stock's 5-day future return will fall in the top 20% of the return distribution.
+Interesting patterns emerge, and the prediction on test data seems to be better than random guessing at least. 
+ 
+
+<hr style="clear: both;">
 
 <img align="left" width="250" height="150" src="doc/bao-menglong--FhoJYnw-cg-unsplash.jpg"> [**SQL with nycflights13**](https://github.com/JungsikNoh/Data_Science_Portfolio/blob/main/Projects/SQL_with_nycflights13/sql_with_nycflights13.ipynb)
 
 'nycflights13' is a relational database with airline on-time data for all flights departing NYC in 2013 as well as related tables of airlines, airports, planes and weather. In this notebook, I perform an exploratory and descriptive analysis mainly looking into how the departure delay time is related to other variables.
  
-#
+<br clear="all"/>
+
+<hr style="clear: both;">
 
 <br/>
 
