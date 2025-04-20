@@ -46,8 +46,29 @@ Interesting patterns emerge, and the prediction on test data seems to be better 
 
 <hr style="clear: both;">
 
+
+
 <br/>
 
+## Research Projects
+
+- [Estimation of the fraction of COVID-19 infected people in U.S. states and countries worldwide](https://github.com/JungsikNoh/COVID19_Estimated-Size-of-Infectious-Population)
+  - An Expectation-Maximization-like algorithm is designed to estimate actual numbers of daily new COVID-19 cases in U.S. states based on the daily numbers of confirmed new cases, deaths, and
+    key pandemic parameters such as Infection-Fatality-Rate (IFR) in 2020.
+
+- [Granger-causal inference of the lamellipodial actin regulator hierarchy by live cell imaging without perturbation](https://github.com/JungsikNoh/Granger-Causality-Analysis-of-Lamellipodia)
+  - A Granger-causality inference framework was developed to dissects cause-effect relations among the protein activity time series extracted from fluorescence microscopic videos of moving cells.
+    The pipeline applies instantaneous Granger-causality with time series regression models to thousands of time courses of sub-cellular protein activities that drive cell movement.
+
+- [Combinatorial responsiveness of single chemosensory neurons to external stimulation of mouse explants revealed by DynamicNeuronTracker](https://github.com/JungsikNoh/DynamicNeuronTracker)
+  - As a image processing pipeline, a patch-matching iteration algorithm is designed to segment jittering and flickering neurons in 3D calcium imaging data.
+
+
+
+
+
+
+<br/>
 
 ## Micro Projects
 
@@ -73,6 +94,10 @@ Interesting patterns emerge, and the prediction on test data seems to be better 
   - HCL is one of the most useful clustering algorithms. 
     It can also provide an order of data points based on their pairwise distances, 
     which is often useful for various data visualizations. 
+
+
+
+
 
 <br/>
 
