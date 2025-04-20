@@ -61,7 +61,7 @@ Interesting patterns emerge, and the prediction on test data seems to be better 
     The pipeline applies instantaneous Granger-causality with time series regression models to thousands of time courses of sub-cellular protein activities that drive cell movement.
 
 - [Combinatorial responsiveness of single chemosensory neurons to external stimulation of mouse explants revealed by DynamicNeuronTracker](https://github.com/JungsikNoh/DynamicNeuronTracker)
-  - As a image processing pipeline, a patch-matching iteration algorithm is designed to segment jittering and flickering neurons in 3D calcium imaging data.
+  - As an image processing pipeline, a patch-matching iteration algorithm is designed to segment jittering and flickering neurons in 3D calcium imaging data.
 
 
 
