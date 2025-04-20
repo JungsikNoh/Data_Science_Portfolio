@@ -30,7 +30,7 @@ An optimal model was searched for across logistic regression, multilayer percept
 
 <img align="left" width="250" height="150" src="doc/anne-nygard-x07ELaNFt34-unsplash.jpg"> [**Stock Market Time Series Forecasting Using Multi-Layer Perceptron**](https://colab.research.google.com/drive/14qvQmm62H2DMRmNClzYIpJyl2LVLJF2l)
 
-Stock price or return time series are almost impossible to predict—if they weren’t, markets would likely have collapsed long ago.
+Stock price or return time series are notoriously difficult to predict.
 In this analysis, I assess how far we can go with predictive modeling, even under such challenging conditions. 
 A Multi-Layer Perceptron (MLP) model is applied to predict whether each S&P500 stock's 5-day future return will fall in the top 20% of the return distribution.
 Interesting patterns emerge, and the prediction on test data seems to be better than random guessing at least. 
