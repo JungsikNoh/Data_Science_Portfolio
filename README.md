@@ -8,7 +8,7 @@ It will be updated on a regular basis.
 > **LinkedIn**: https://www.linkedin.com/in/jungsik-noh-8a33ab129/ 
  
 
-## Projects
+## DS Projects
 
 <img align="left" width="250" height="150" src="doc/satelliteImage_damage.jpeg"> [**Anomaly Detection Using Autoencoder with Satellite Images of Hurricane Damage and MNIST digits**](https://colab.research.google.com/drive/1ZDphxN3ejxgogC8mKsjEc2dKVdRV9HZw?usp=sharing)
 
