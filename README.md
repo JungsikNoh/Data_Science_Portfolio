@@ -5,7 +5,7 @@ It will be updated on a regular basis.
 
 ## Contact
 > **Email**: jungsik.noh@utsouthwestern.edu     <br />
-> **LinkedIn**: https://www.linkedin.com/in/jungsik-noh-8a33ab129/ 
+> **LinkedIn**: https://www.linkedin.com/in/jungsik-james-noh-8a33ab129/
  
 
 ## DS Projects
