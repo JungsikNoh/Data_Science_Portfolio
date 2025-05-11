@@ -34,7 +34,16 @@ Stock price or return time series are notoriously difficult to predict.
 In this analysis, I assess how far we can go with predictive modeling, even under such challenging conditions. 
 A Multi-Layer Perceptron (MLP) model is applied to predict whether each S&P500 stock's 5-day future return will fall in the top 20% of the return distribution.
 Interesting patterns emerge, and the prediction on test data seems to be better than random guessing at least. 
- 
+  
+
+<hr style="clear: both;">
+
+<img align="left" width="250" height="150" src="doc/photo-COVID-unsplash-1585858228804-7caf9961c49d.jpg"> [**Estimation of the prevalence of COVID-19 infection in U.S. states and countries worldwide**](https://github.com/JungsikNoh/COVID19_Estimated-Size-of-Infectious-Population)
+
+An Expectation-Maximization-like algorithm is designed to estimate actual numbers of daily new COVID-19 cases in U.S. states based on the daily numbers of confirmed new cases, deaths, and
+    key pandemic parameters such as Infection-Fatality-Rate (IFR) in 2020.
+
+<br clear="all"/>
 
 <hr style="clear: both;">
 
@@ -51,10 +60,6 @@ Interesting patterns emerge, and the prediction on test data seems to be better 
 <br/>
 
 ## Research Projects
-
-- [Estimation of the fraction of COVID-19 infected people in U.S. states and countries worldwide](https://github.com/JungsikNoh/COVID19_Estimated-Size-of-Infectious-Population)
-  - An Expectation-Maximization-like algorithm is designed to estimate actual numbers of daily new COVID-19 cases in U.S. states based on the daily numbers of confirmed new cases, deaths, and
-    key pandemic parameters such as Infection-Fatality-Rate (IFR) in 2020.
 
 - [Granger-causal inference of the lamellipodial actin regulator hierarchy by live cell imaging without perturbation](https://github.com/JungsikNoh/Granger-Causality-Analysis-of-Lamellipodia)
   - A Granger-causality inference framework was developed to dissects cause-effect relations among the protein activity time series extracted from fluorescence microscopic videos of moving cells.
