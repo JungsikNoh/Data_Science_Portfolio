@@ -43,7 +43,8 @@ Interesting patterns emerge, and the prediction on test data seems to be better 
 An Expectation-Maximization-like algorithm is designed to estimate actual numbers of daily new COVID-19 cases in U.S. states based on the daily numbers of confirmed new cases, deaths, and
     key pandemic parameters such as Infection-Fatality-Rate (IFR) in 2020.
 
-<br clear="all"/>
+<br/>
+
 
 <hr style="clear: both;">
 
