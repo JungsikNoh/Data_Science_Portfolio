@@ -1,4 +1,4 @@
-# Data Science Portfolio - Jungsik Noh
+# Data Science Portfolio - Jungsik (James) Noh
 This portfolio contains my data science projects for self-learning purposes.
 It will be updated on a regular basis. 
 
