@@ -49,9 +49,7 @@ An Expectation-Maximization-like algorithm is designed to estimate actual number
 'nycflights13' is a relational database with airline on-time data for all flights departing NYC in 2013 as well as related tables of airlines, airports, planes and weather. In this notebook, I perform an exploratory and descriptive analysis mainly looking into how the departure delay time is related to other variables.
  
 <br clear="all"/>
-
 <hr style="clear: both;">
-
 
 <br/>
 
@@ -63,11 +61,6 @@ An Expectation-Maximization-like algorithm is designed to estimate actual number
 
 - [Combinatorial responsiveness of single chemosensory neurons to external stimulation of mouse explants revealed by DynamicNeuronTracker](https://github.com/JungsikNoh/DynamicNeuronTracker)
   - As an image processing pipeline, a patch-matching iteration algorithm is designed to segment jittering and flickering neurons in 3D calcium imaging data.
-
-
-
-
-
 
 <br/>
 
