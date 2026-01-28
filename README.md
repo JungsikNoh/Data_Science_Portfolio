@@ -56,7 +56,7 @@ An Expectation-Maximization-like algorithm is designed to estimate actual number
 ## Research Projects
 
 - [Granger-causal inference of the lamellipodial actin regulator hierarchy by live cell imaging without perturbation](https://github.com/JungsikNoh/Granger-Causality-Analysis-of-Lamellipodia)
-  - A Granger-causality inference framework was developed to dissects cause-effect relations among the protein activity time series extracted from fluorescence microscopic videos of moving cells.
+  - A Granger-causality inference framework was developed to dissect cause-effect relations among the protein activity time series extracted from fluorescence microscopic videos of moving cells.
     The pipeline applies instantaneous Granger-causality with time series regression models to thousands of time courses of sub-cellular protein activities that drive cell movement.
 
 - [Combinatorial responsiveness of single chemosensory neurons to external stimulation of mouse explants revealed by DynamicNeuronTracker](https://github.com/JungsikNoh/DynamicNeuronTracker)
