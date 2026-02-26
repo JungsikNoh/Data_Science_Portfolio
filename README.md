@@ -20,7 +20,7 @@ Data points with the largest reconstruction errors showed abnormal images in eac
 
 <img align="left" width="250" height="150" src="doc/jorik-kleen-vAgSEXaMhZ8-unsplash2.png"> [**Customer Churn Prediction Models**](https://github.com/JungsikNoh/CustomerChurnPredictionModel)
 
-In this project, I demonstrate the steps for building up a churn prediction model using a synthetic insurance customer dataset that mimic real-world dirty data.
+In this project, I demonstrate the steps for building up a churn prediction model using a synthetic insurance customer dataset that mimic real-world noisy data.
 An optimal model was searched for across logistic regression, multilayer perceptron, random forest, and decision tree models.
 
 <br clear="all"/>
